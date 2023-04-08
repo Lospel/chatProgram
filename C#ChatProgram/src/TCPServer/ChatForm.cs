@@ -200,9 +200,7 @@ namespace MultiChatServer {
             private Thread recvThrd = null;
 
             public string Id => _id;
-
             public string NickName => _nickName;
-
 
             public ClientHandler(Socket client)
             {
