@@ -18,6 +18,8 @@ namespace MultiChatServer {
 
     public delegate void Disconnected(ChatForm.ClientHandler handle);
 
+    public delegate void DisconnectRemove(ChatForm.ClientHandler handle);
+
     public delegate void RecvMessage(ChatForm.ClientHandler handle, string msg);
 
 
@@ -48,6 +50,7 @@ namespace MultiChatServer {
                     lblMsg.Text = "서버 시작됨";
                     lblMsg.Tag = "Start";
                     btnStart.Text = "종료";
+                    
                 }
                 else
                 {
@@ -75,6 +78,7 @@ namespace MultiChatServer {
                     clientHandler.connectEventHandler += ConnectTreeAdd;
                     clientHandler.connectedEventHandler += ConnectedTreeAdd;
                     clientHandler.receiveMessageHandler += RecvMessage;
+                    clientHandler.disconnectRemove += ConnectedTreeDelete;
 
                     clientHandler.Initialize();
                     connectionList.Add(clientHandler);
@@ -140,6 +144,18 @@ namespace MultiChatServer {
             }
         }
 
+        public void ConnectedTreeDelete(ChatForm.ClientHandler handle)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate { ConnectedTreeDelete(handle); });
+            }
+            else
+            {
+                connectedList.Remove(handle);
+            }
+        }
+
         public void ConnectedTreeAdd(ChatForm.ClientHandler handle)
         {
             if (this.InvokeRequired)
@@ -172,11 +188,9 @@ namespace MultiChatServer {
             {
                 if (msg != null && msg.Length >0)
                 {
-
                     txtHistory.AppendText(msg);
-
                 }
-                
+               
             }
             
         }
@@ -187,6 +201,7 @@ namespace MultiChatServer {
             public event Connect connectEventHandler;
             public event Connected connectedEventHandler;
             public event RecvMessage receiveMessageHandler;
+            public event DisconnectRemove disconnectRemove;
 
             private Socket _client;
             private NetworkStream netStream;
@@ -204,6 +219,11 @@ namespace MultiChatServer {
             public ClientHandler(Socket client)
             {
                 _client = client;
+
+                if(!_client.Connected)
+                {
+                    disconnectRemove.Invoke(this);
+                }
             }
 
             public void Initialize()
