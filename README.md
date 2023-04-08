@@ -8,8 +8,8 @@
 + 사용툴 : Visual Studio 2022
 
 ## **채팅프로그램_프리뷰** ##
-+ [채팅_서버_코드]()
-+ [채팅_클라이언트_코드]()
++ [채팅_서버_코드](C%23ChatProgram/src/TCPServer/ChatForm.cs)
++ [채팅_클라이언트_코드](C#ChatProgram/src/TCPClient/ChatForm.cs)
 
 
 ## **라이브러리** ##
