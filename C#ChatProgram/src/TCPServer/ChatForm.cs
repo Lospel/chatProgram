@@ -83,7 +83,6 @@ namespace MultiChatServer {
                 }
                 catch (System.Exception e)
                 {
-                    MessageBox.Show(e.Message);
                     break;
                 }
             }
