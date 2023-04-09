@@ -10,7 +10,7 @@
 ## **채팅프로그램_프리뷰** ##
 <img src="https://github.com/Lospel/chatProgram/blob/main/C%23ChatProgram/ChatProgramPriview.png?raw=true" width="200" height="200">
 
-+ [채팅프로그램_보고서]()
++ [채팅프로그램_보고서](C%23ChatProgram/C%23비동기채팅프로그램_보고서.pdf)
 + [채팅_서버_코드](C%23ChatProgram/src/TCPServer/ChatForm.cs)
 + [채팅_클라이언트_코드](C%23ChatProgram/src/TCPClient/ChatForm.cs)
 
