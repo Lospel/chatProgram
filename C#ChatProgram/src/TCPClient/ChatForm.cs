@@ -144,5 +144,13 @@ namespace MultiChatClient {
             txtTTS.Text = "";
         }
 
+        private void txtTTS_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Message_Snd("<" + tb_ClientName.Text + ">" + txtTTS.Text, true);
+                txtTTS.Text = "";
+            }
+        }
     }
 }

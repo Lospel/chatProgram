@@ -27,17 +27,17 @@
             this.tblMainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.tb_ClientName = new System.Windows.Forms.TextBox();
             this.lb_ClientName = new System.Windows.Forms.Label();
+            this.txtTTS = new System.Windows.Forms.TextBox();
+            this.lblTTS = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnConnect = new System.Windows.Forms.Button();
             this.txtHistory = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
             this.lblPortNumber = new System.Windows.Forms.Label();
             this.txtPort = new System.Windows.Forms.TextBox();
             this.lb_Connect = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.btnSend = new System.Windows.Forms.Button();
-            this.txtTTS = new System.Windows.Forms.TextBox();
-            this.lblTTS = new System.Windows.Forms.Label();
             this.tblMainLayout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +101,30 @@
             this.lb_ClientName.Text = "대화명";
             this.lb_ClientName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtTTS
+            // 
+            this.tblMainLayout.SetColumnSpan(this.txtTTS, 6);
+            this.txtTTS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTTS.Location = new System.Drawing.Point(114, 376);
+            this.txtTTS.Margin = new System.Windows.Forms.Padding(4, 2, 3, 3);
+            this.txtTTS.MaxLength = 260;
+            this.txtTTS.Name = "txtTTS";
+            this.txtTTS.Size = new System.Drawing.Size(515, 27);
+            this.txtTTS.TabIndex = 7;
+            this.txtTTS.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTTS_KeyDown);
+            // 
+            // lblTTS
+            // 
+            this.lblTTS.AutoSize = true;
+            this.lblTTS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTTS.Location = new System.Drawing.Point(9, 375);
+            this.lblTTS.Margin = new System.Windows.Forms.Padding(1);
+            this.lblTTS.Name = "lblTTS";
+            this.lblTTS.Size = new System.Drawing.Size(100, 30);
+            this.lblTTS.TabIndex = 6;
+            this.lblTTS.Text = "보낼 텍스트";
+            this.lblTTS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
@@ -150,6 +174,18 @@
             this.txtHistory.Size = new System.Drawing.Size(713, 328);
             this.txtHistory.TabIndex = 5;
             // 
+            // btnSend
+            // 
+            this.btnSend.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSend.Location = new System.Drawing.Point(637, 375);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(89, 30);
+            this.btnSend.TabIndex = 8;
+            this.btnSend.Text = "보내기";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
             // lblPortNumber
             // 
             this.lblPortNumber.AutoSize = true;
@@ -184,41 +220,6 @@
             this.lb_Connect.Text = "연결 대기중";
             this.lb_Connect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnSend
-            // 
-            this.btnSend.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSend.Location = new System.Drawing.Point(637, 375);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(89, 30);
-            this.btnSend.TabIndex = 8;
-            this.btnSend.Text = "보내기";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // txtTTS
-            // 
-            this.tblMainLayout.SetColumnSpan(this.txtTTS, 6);
-            this.txtTTS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTTS.Location = new System.Drawing.Point(114, 376);
-            this.txtTTS.Margin = new System.Windows.Forms.Padding(4, 2, 3, 3);
-            this.txtTTS.MaxLength = 260;
-            this.txtTTS.Name = "txtTTS";
-            this.txtTTS.Size = new System.Drawing.Size(515, 27);
-            this.txtTTS.TabIndex = 7;
-            // 
-            // lblTTS
-            // 
-            this.lblTTS.AutoSize = true;
-            this.lblTTS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTTS.Location = new System.Drawing.Point(9, 375);
-            this.lblTTS.Margin = new System.Windows.Forms.Padding(1);
-            this.lblTTS.Name = "lblTTS";
-            this.lblTTS.Size = new System.Drawing.Size(100, 30);
-            this.lblTTS.TabIndex = 6;
-            this.lblTTS.Text = "보낼 텍스트";
-            this.lblTTS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ChatForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -236,19 +237,19 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tblMainLayout;
+        private System.Windows.Forms.TextBox txtTTS;
+        private System.Windows.Forms.Label lblTTS;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.TextBox txtHistory;
+        private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label lblPortNumber;
         private System.Windows.Forms.TextBox txtPort;
         private System.Windows.Forms.TextBox tb_ClientName;
         private System.Windows.Forms.Label lb_ClientName;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Label lb_Connect;
-        private System.Windows.Forms.TextBox txtTTS;
-        private System.Windows.Forms.Label lblTTS;
-        private System.Windows.Forms.Button btnSend;
     }
 }
 

@@ -1,0 +1,9 @@
+D:\git\ojt.dwkim\C#ChatProgram\build\AnyCPUDebug\ChatClient.exe.config
+D:\git\ojt.dwkim\C#ChatProgram\build\AnyCPUDebug\ChatClient.exe
+D:\git\ojt.dwkim\C#ChatProgram\build\AnyCPUDebug\ChatClient.pdb
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\ChatClient\ChatClient.Form1.resources
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\ChatClient\ChatClient.Properties.Resources.resources
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\ChatClient\ChatClient.csproj.GenerateResource.cache
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\ChatClient\ChatClient.csproj.CoreCompileInputs.cache
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\ChatClient\ChatClient.exe
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\ChatClient\ChatClient.pdb

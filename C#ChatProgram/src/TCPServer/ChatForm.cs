@@ -9,6 +9,7 @@ using System.Text;
 using System.IO.Ports;
 using System.Threading;
 using System.Threading.Tasks;
+using static MultiChatServer.ChatForm;
 
 namespace MultiChatServer {
 
@@ -17,8 +18,6 @@ namespace MultiChatServer {
     public delegate void Connected(ChatForm.ClientHandler handle);
 
     public delegate void Disconnected(ChatForm.ClientHandler handle);
-
-    public delegate void DisconnectRemove(ChatForm.ClientHandler handle);
 
     public delegate void RecvMessage(ChatForm.ClientHandler handle, string msg);
 
@@ -32,7 +31,7 @@ namespace MultiChatServer {
         private List<ClientHandler> readyList = new List<ClientHandler>(100);
         private List<ClientHandler> connectedList = new List<ClientHandler>(100);
 
-
+        private static ArrayList clientSocketArray = new ArrayList();
         public ChatForm() {
             InitializeComponent();
             chatServer = new TcpListener(IPAddress.Any, int.Parse(txtPort.Text));
@@ -50,7 +49,6 @@ namespace MultiChatServer {
                     lblMsg.Text = "서버 시작됨";
                     lblMsg.Tag = "Start";
                     btnStart.Text = "종료";
-                    
                 }
                 else
                 {
@@ -70,15 +68,16 @@ namespace MultiChatServer {
         }
         private void AcceptClient()
         {
+            Socket socketClient = null;
             while (true)
             {
                 try
                 {
-                    ClientHandler clientHandler = new ClientHandler(chatServer.AcceptSocket());
+                    socketClient = chatServer.AcceptSocket();
+                    ClientHandler clientHandler = new ClientHandler(socketClient);
                     clientHandler.connectEventHandler += ConnectTreeAdd;
                     clientHandler.connectedEventHandler += ConnectedTreeAdd;
                     clientHandler.receiveMessageHandler += RecvMessage;
-                    clientHandler.disconnectRemove += ConnectedTreeDelete;
 
                     clientHandler.Initialize();
                     connectionList.Add(clientHandler);
@@ -87,6 +86,7 @@ namespace MultiChatServer {
                 }
                 catch (System.Exception e)
                 {
+                    clientSocketArray.Remove(socketClient);
                     break;
                 }
             }
@@ -144,18 +144,6 @@ namespace MultiChatServer {
             }
         }
 
-        public void ConnectedTreeDelete(ChatForm.ClientHandler handle)
-        {
-            if (this.InvokeRequired)
-            {
-                this.Invoke((MethodInvoker)delegate { ConnectedTreeDelete(handle); });
-            }
-            else
-            {
-                connectedList.Remove(handle);
-            }
-        }
-
         public void ConnectedTreeAdd(ChatForm.ClientHandler handle)
         {
             if (this.InvokeRequired)
@@ -190,7 +178,7 @@ namespace MultiChatServer {
                 {
                     txtHistory.AppendText(msg);
                 }
-               
+                
             }
             
         }
@@ -201,7 +189,6 @@ namespace MultiChatServer {
             public event Connect connectEventHandler;
             public event Connected connectedEventHandler;
             public event RecvMessage receiveMessageHandler;
-            public event DisconnectRemove disconnectRemove;
 
             private Socket _client;
             private NetworkStream netStream;
@@ -214,16 +201,13 @@ namespace MultiChatServer {
             private Thread recvThrd = null;
 
             public string Id => _id;
+
             public string NickName => _nickName;
+
 
             public ClientHandler(Socket client)
             {
                 _client = client;
-
-                if(!_client.Connected)
-                {
-                    disconnectRemove.Invoke(this);
-                }
             }
 
             public void Initialize()
@@ -232,6 +216,8 @@ namespace MultiChatServer {
                 this.strReader = new StreamReader(netStream);
 
                 this._id = _client.RemoteEndPoint.ToString();
+
+                ChatForm.clientSocketArray.Add(_client);
             }
 
             public void Startup()
@@ -243,13 +229,13 @@ namespace MultiChatServer {
 
                 recvLoop = true;
                 recvThrd.Start();
-
+                
                 connectEventHandler.Invoke(this);
             }
 
             public void onRecvLoop()
             {
-
+                // 나중에 stx checksum etx 프로토콜로 해당 유저명을 가져와서 대입.
                 _nickName = _id;
 
                 Thread.Sleep(3000);
@@ -263,11 +249,22 @@ namespace MultiChatServer {
                         if (lstMessage != null && lstMessage.Length > 0)
                         {
                             receiveMessageHandler.Invoke(this, lstMessage + "\r\n");
+                            byte[] bySend_Data = Encoding.UTF8.GetBytes(lstMessage + "\r\n");
+                            lock (clientSocketArray)
+                            {
+                                foreach(Socket socket in clientSocketArray)
+                                {
+                                    NetworkStream stream = new NetworkStream(socket);
+                                    stream.Write(bySend_Data,0, bySend_Data.Length);
+                                }
+                            }
                         }
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show($"서버 오류 : {e.Message}");
+                        MessageBox.Show($"클라이언트와 접속이 종료되었습니다.");
+                        clientSocketArray.Remove(_client);
+                        break;
                     }
                 }
             }

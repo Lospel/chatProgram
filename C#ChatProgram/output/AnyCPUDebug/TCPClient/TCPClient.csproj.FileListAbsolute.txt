@@ -1,13 +1,22 @@
-C:\Users\김도위\Downloads\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe.config
-C:\Users\김도위\Downloads\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe
-C:\Users\김도위\Downloads\C#ChatProgram\build\AnyCPUDebug\TCPClient.pdb
-C:\Users\김도위\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.AssemblyReference.cache
-C:\Users\김도위\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.SuggestedBindingRedirects.cache
-C:\Users\김도위\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\MultiChatClient.ChatForm.resources
-C:\Users\김도위\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.GenerateResource.cache
-C:\Users\김도위\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.CoreCompileInputs.cache
-C:\Users\김도위\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.exe
-C:\Users\김도위\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.pdb
+D:\git\ojt.dwkim\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe.config
+D:\git\ojt.dwkim\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe
+D:\git\ojt.dwkim\C#ChatProgram\build\AnyCPUDebug\TCPClient.pdb
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.AssemblyReference.cache
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\TCPClient\MultiChatClient.ChatForm.resources
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.GenerateResource.cache
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.CoreCompileInputs.cache
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.exe
+D:\git\ojt.dwkim\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.pdb
+C:\Users\rlaeh\Downloads\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe.config
+C:\Users\rlaeh\Downloads\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe
+C:\Users\rlaeh\Downloads\C#ChatProgram\build\AnyCPUDebug\TCPClient.pdb
+C:\Users\rlaeh\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.AssemblyReference.cache
+C:\Users\rlaeh\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\rlaeh\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\MultiChatClient.ChatForm.resources
+C:\Users\rlaeh\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.GenerateResource.cache
+C:\Users\rlaeh\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.CoreCompileInputs.cache
+C:\Users\rlaeh\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.exe
+C:\Users\rlaeh\Downloads\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.pdb
 C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe.config
 C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe
 C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\build\AnyCPUDebug\TCPClient.pdb
