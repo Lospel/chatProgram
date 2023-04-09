@@ -78,6 +78,7 @@ namespace MultiChatServer {
                     clientHandler.connectEventHandler += ConnectTreeAdd;
                     clientHandler.connectedEventHandler += ConnectedTreeAdd;
                     clientHandler.receiveMessageHandler += RecvMessage;
+                    clientHandler.disconnectedHandler += Disconnected;
 
                     clientHandler.Initialize();
                     connectionList.Add(clientHandler);
@@ -183,12 +184,41 @@ namespace MultiChatServer {
             
         }
 
+        public void Disconnected(ChatForm.ClientHandler handle)
+        {
+            TreeNode root = null;
+
+            if (this.InvokeRequired)
+                this.Invoke((MethodInvoker)delegate {  Disconnected(handle);});
+            else
+            {
+                if (ConnectedTree.Nodes.Count == 0)
+                {
+                    ConnectedTree.Nodes.Clear();
+                }
+                else
+                    root = ConnectedTree.Nodes[0];
+
+                foreach (TreeNode childNode in root.Nodes)
+                {
+                    if (childNode.Text == handle.Id)
+                    {
+                        root.Nodes.Remove(childNode);
+                        connectedList.Remove(handle);
+                        break;
+                    }
+
+                }
+            }
+        }
+
 
         public class ClientHandler
         {
             public event Connect connectEventHandler;
             public event Connected connectedEventHandler;
             public event RecvMessage receiveMessageHandler;
+            public event Disconnected disconnectedHandler;
 
             private Socket _client;
             private NetworkStream netStream;
@@ -263,6 +293,7 @@ namespace MultiChatServer {
                     catch (Exception e)
                     {
                         MessageBox.Show($"클라이언트와 접속이 종료되었습니다.");
+                        disconnectedHandler.Invoke(this);
                         clientSocketArray.Remove(_client);
                         break;
                     }
