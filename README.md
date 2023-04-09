@@ -8,7 +8,7 @@
 + 사용툴 : Visual Studio 2022
 
 ## **채팅프로그램_프리뷰** ##
-<img src="" width="200" height="200">
+<img src="https://github.com/Lospel/chatProgram/blob/main/C%23ChatProgram/ChatProgramPriview.png?raw=true" width="200" height="200">
 
 + [채팅프로그램_보고서]()
 + [채팅_서버_코드](C%23ChatProgram/src/TCPServer/ChatForm.cs)
