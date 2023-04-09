@@ -31,3 +31,13 @@ C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\output\AnyCPUDeb
 C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\TCPServer.csproj.CoreCompileInputs.cache
 C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\TCPServer.exe
 C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\TCPServer.pdb
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\build\AnyCPUDebug\TCPServer.exe.config
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\build\AnyCPUDebug\TCPServer.exe
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\build\AnyCPUDebug\TCPServer.pdb
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\TCPServer.csproj.AssemblyReference.cache
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\TCPServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\MultiChatServer.ChatForm.resources
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\TCPServer.csproj.GenerateResource.cache
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\TCPServer.csproj.CoreCompileInputs.cache
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\TCPServer.exe
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPServer\TCPServer.pdb

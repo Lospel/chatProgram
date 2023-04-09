@@ -27,3 +27,13 @@ C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\output\AnyCPUDeb
 C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.CoreCompileInputs.cache
 C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.exe
 C:\Users\rlaeh\OneDrive\바탕 화면\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.pdb
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe.config
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\build\AnyCPUDebug\TCPClient.exe
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\build\AnyCPUDebug\TCPClient.pdb
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.AssemblyReference.cache
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\MultiChatClient.ChatForm.resources
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.GenerateResource.cache
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.csproj.CoreCompileInputs.cache
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.exe
+C:\Users\김도위\Downloads\chatProgram\C#ChatProgram\output\AnyCPUDebug\TCPClient\TCPClient.pdb
